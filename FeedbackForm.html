@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+</head>
+<body>
+    <h1>Student Feedback Form</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}
+            {{ form.name(size=30) }}
+            {% if form.name.errors %}
+                {% for error in form.name.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.course.label }}
+            {{ form.course(size=30) }}
+            {% if form.course.errors %}
+                {% for error in form.course.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.short_answer.label }}
+            {{ form.short_answer(rows=5, cols=40) }}
+        </p>
+        <p>
+            {{ form.long_answer.label }}
+            {{ form.long_answer(rows=10, cols=40) }}
+        </p>
+        <p>
+            {{ form.satisfaction.label }}
+            {{ form.satisfaction() }}
+        </p>
+        <p>
+            {{ form.recommendation.label }}
+            {{ form.recommendation() }}
+        </p>
+        <p>
+            {{ form.suggestions.label }}
+            {{ form.suggestions(rows=5, cols=40) }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+</html>
