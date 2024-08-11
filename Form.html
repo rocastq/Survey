@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form</title>
+</head>
+<body>
+
+<header style="text-align:left;font-size:18px">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lNYz3Ip73G1Dr3u9uW2HHQVuZjC8kBoenZ58H3t8qzhu8=s900-c-k-c0x00ffffff-no-rj"
+    alt="Top Logo" style="width:7%; margin:auto;">
+    <a href="Welcome Page.html"> Home &nbsp </a>
+<a href="About us.html"> About &nbsp </a> <a href="Form.html"> Form </a></header>
+
+
+  <h2>Data recollection</h2>
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    <h3>Student information</h3>
+    <div class="question">
+        {{ form.name.label }} {{ form.name(size=20) }}
+    </div>
+    <div class="question">
+        {{ form.student_number.label }} {{ form.student_number(size=20) }}
+    </div>
+    <div class="question">
+        {{ form.email.label }} {{ form.email(size=20) }}
+    </div>
+
+    <h3>Academic Performance</h3>
+    <div class="question">
+        {{ form.grades.label }} {{ form.grades(rows=5, cols=20) }}
+    </div>
+
+    <h3>Satisfaction with Academic Experience</h3>
+    <div class="question">
+        {{ form.satisfaction.label }} {{ form.satisfaction() }}
+    </div>
+
+    <h3>Suggestions for Improvement</h3>
+    <div class="question">
+        {{ form.suggestions.label }} {{ form.suggestions(rows=5, cols=20) }}
+    </div>
+
+    <h3>Additional Comments</h3>
+    <div class="question">
+        {{ form.comments.label }} {{ form.comments(rows=5, cols=20) }}
+    </div>
+
+    {{ form.submit() }}
+</form>
+
+<footer> <!-- Footer section -->
+        <img src="https://img.emg-services.net/institutes/institute35137/logos/logo.png" alt="University Logo">
+        <p>&copy; 2024 GIC </p>
+    </footer>
+
+
+</body>
+</html>
